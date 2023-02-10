@@ -25,7 +25,7 @@ const MeetupDetailPage = (props) => {
 //all dynamic meetupIds
 export const getStaticPaths = async () => {
   const client = await MongoClient.connect(
-    "mongodb+srv://blogChefTestUser:zTGz7I6ZVpvZnAD1@cluster0.a0wzikd.mongodb.net/MEETUPS?retryWrites=true&w=majority"
+    "mongodb+srv://<username>:<password>@cluster0.a0wzikd.mongodb.net/MEETUPS?retryWrites=true&w=majority"
   );
 
   const db = client.db();
@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
   client.close();
 
   return {
-    fallback: true,
+    fallback: "blocking", //fallback: true,
     paths: meetupIdData.map((m) => ({
       params: {
         meetupId: m._id.toString(),
@@ -52,7 +52,7 @@ export const getStaticProps = async (context) => {
   console.log(meetupId);
 
   const client = await MongoClient.connect(
-    "mongodb+srv://blogChefTestUser:zTGz7I6ZVpvZnAD1@cluster0.a0wzikd.mongodb.net/MEETUPS?retryWrites=true&w=majority"
+    "mongodb+srv://<username>:<password>@cluster0.a0wzikd.mongodb.net/MEETUPS?retryWrites=true&w=majority"
   );
 
   const db = client.db();

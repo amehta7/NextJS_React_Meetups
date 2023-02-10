@@ -4,6 +4,10 @@ You can view different meetups and add a new meetup.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Connection to DB
+
+Replace the username and password in the connection string with your correct value
+
 ## Getting Started
 
 First, run the development server:
